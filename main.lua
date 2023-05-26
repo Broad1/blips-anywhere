@@ -1,14 +1,14 @@
-local blips = {
-  -- {title="", colour=, id=, x=, y=, z=},
+local locations = {
+  -- {name="", color=, id=, x=, y=, z=},
 
   {name="Mechanic", color=5, id=446, x = -347.291, y = -133.370, z = 38.009},
-  {name="Pacific Bank", colour=5, id=108, x = 260.130, y = 204.308, z = 109.287},
+  {name="Pacific Bank", color=5, id=108, x = 260.130, y = 204.308, z = 109.287},
 }
 
 
 Citizen.CreateThread(function()
 
-    for _, info in pairs(blips) do
+    for _, info in pairs(locations) do
       info.blip = AddBlipForCoord(info.x, info.y, info.z) -- Adds the blip at location determined inside each line of blips.lua
       SetBlipSprite(info.blip, info.id) -- Sets the displayed sprite for a specific blips. Determined in the blips.lua
       SetBlipDisplay(info.blip, 3)
